@@ -1,0 +1,21 @@
+<ng-scrollbar style="height: calc(100vh - 70px)" exclude="'#mobile-collapse1'" visibility="hover">
+    <div class="navbar-content">
+      <ul class="nav pcoded-inner-navbar" (clickOutside)="fireOutClick()" (mouseleave)="navMob()">
+        @for (item of menuItems; track item) {
+          @if (item.type == 'group') {
+            <app-sidebar-group [item]="item"></app-sidebar-group>
+          }
+          @if (item.type == 'collapse') {
+            <app-sidebar-collapse [item]="item"></app-sidebar-collapse>
+          }
+          @if (item.type == 'item') {
+            <app-sidebar-item [item]="item"></app-sidebar-item>
+          }
+        }
+      </ul>
+      <!-- <div class="version">
+        <label disabled class="pe-auto">{{ currentApplicationVersion }}</label>
+      </div> -->
+    </div>
+  </ng-scrollbar>
+  

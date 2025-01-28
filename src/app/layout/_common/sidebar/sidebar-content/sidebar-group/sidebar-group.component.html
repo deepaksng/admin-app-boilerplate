@@ -1,0 +1,17 @@
+@if (!item.hidden) {
+    <li class="nav-item pcoded-menu-caption">
+      <label>{{ item.title }}</label>
+    </li>
+    @for (item of item.children; track item) {
+      @if (item.type == 'group') {
+        <app-sidebar-group [item]="item"></app-sidebar-group>
+      }
+      @if (item.type == 'collapse') {
+        <app-sidebar-collapse [item]="item"></app-sidebar-collapse>
+      }
+      @if (item.type == 'item') {
+        <app-sidebar-item [item]="item"></app-sidebar-item>
+      }
+    }
+  }
+  
