@@ -1,0 +1,26 @@
+@if (!item.hidden) {
+    <li data-username="dashboard Default" class="nav-item pcoded-hasmenu" [routerLinkActive]="['active']">
+      <a [routerLinkActive]="['active']" href="javascript:" class="nav-link" (click)="navCollapse($event)">
+        @if (item.icon) {
+          <span class="pcoded-micon">
+            <i class="{{ item.icon }}"></i>
+          </span>
+        }
+        <span class="pcoded-mtext">{{ item.title }}</span>
+      </a>
+      <ul class="pcoded-submenu" [routerLinkActive]="['active']">
+        @for (item of item.children; track item) {
+          @if (item.type == 'group') {
+            <app-sidebar-group [item]="item"></app-sidebar-group>
+          }
+          @if (item.type == 'collapse') {
+            <app-sidebar-collapse [item]="item"></app-sidebar-collapse>
+          }
+          @if (item.type == 'item') {
+            <app-sidebar-item [item]="item"></app-sidebar-item>
+          }
+        }
+      </ul>
+    </li>
+  }
+  

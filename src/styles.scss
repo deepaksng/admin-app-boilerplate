@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/variables';
+
+/* fonts-icon */
+@import './assets/scss/fonts/fontawesome/scss/fontawesome';
+@import './assets/scss/fonts/feather/iconfont';
+
+@import './assets/scss/general';
+@import './assets/scss/generic';
+@import './assets/scss/mixins/function';
+
+/* important element */
+@import './assets/scss/menu/menu-lite';
+
+/* basic elements */
+@import './assets/scss/theme-elements/theme-elements';
+
+/* third party modules style*/
+
+@import './assets/scss/custom';
+
+
+.pcoded-navbar .pcoded-inner-navbar li > a {
+  color: $menu-dark-text-color !important;
+  padding: 8px 24px !important;
+  transition: all .3s ease-in-out !important;
+  font-size: .875rem !important;
+}
+
+.navbar-expand-lg {
+  padding: 0 !important;
+}
